@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decoration Questionnaire — MON Events & Bridal</title>
+<meta name="description" content="Tell MON Events & Bridal about your celebration so we can design and style it beautifully.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">MON</span>
+      <span class="logo-sub">Events &amp; Bridal</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#featured-work">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#the-collection">Collection</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html" class="btn btn-outline">Enquire</a>
+    </div>
+    <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="index.html">Home</a>
+    <a href="index.html#featured-work">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#the-collection">Collection</a>
+    <a href="index.html#about">About</a>
+    <a href="contact.html" class="btn btn-outline">Enquire</a>
+  </div>
+</div>
+
+<section class="page-header" style="min-height:38vh;">
+  <div class="page-header-bg">
+    <img src="https://images.unsplash.com/photo-1470163395405-e8b943f26cbe?q=80&w=1800&auto=format&fit=crop" alt="Candlelit reception table">
+  </div>
+  <div class="page-header-inner reveal">
+    <span class="eyebrow">Event Design &amp; Styling</span>
+    <h1>Tell us about your celebration</h1>
+    <p>A few details so we can start designing something beautiful for you.</p>
+  </div>
+</section>
+
+<section id="questionnaire">
+  <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
+    <form class="form-shell reveal-group" id="decorationForm" onsubmit="event.preventDefault(); alert('This form is not connected to Airtable yet — submission logged to console.'); console.log(new FormData(this));">
+
+      <div class="form-section reveal">
+        <h3>Contact Details</h3>
+        <p class="section-sub">So we know who we're talking to.</p>
+        <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+        <div class="two-col">
+          <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="071 234 5678" required></div>
+          <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
+        </div>
+      </div>
+
+      <div class="form-section reveal">
+        <h3>Your Celebration</h3>
+        <p class="section-sub">What are we designing, and when?</p>
+        <div class="field">
+          <label>What Event Are You Celebrating?</label>
+          <div class="choice-grid" role="radiogroup" aria-label="Event type">
+            <label class="choice-row"><input type="radio" name="eventType" value="Wedding" required><span>Wedding</span></label>
+            <label class="choice-row"><input type="radio" name="eventType" value="Baby Shower"><span>Baby Shower</span></label>
+            <label class="choice-row"><input type="radio" name="eventType" value="Bridal Shower"><span>Bridal Shower</span></label>
+            <label class="choice-row"><input type="radio" name="eventType" value="Corporate"><span>Corporate</span></label>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="field"><label for="eventDate">Event Date</label><input id="eventDate" name="eventDate" type="date" required></div>
+          <div class="field"><label for="setupDate">Setup Date</label><input id="setupDate" name="setupDate" type="date" required></div>
+        </div>
+        <div class="field"><label for="guests">How Many Guests Are You Expecting?</label><input id="guests" name="guests" type="number" placeholder="e.g. 120" required></div>
+      </div>
+
+      <div class="form-section reveal">
+        <h3>Venue</h3>
+        <p class="section-sub">Where is your celebration taking place?</p>
+        <div class="two-col">
+          <div class="field"><label for="venueName">Venue Name</label><input id="venueName" name="venueName" type="text" placeholder="Venue name" required></div>
+          <div class="field"><label for="venueAddress">Venue Address</label><input id="venueAddress" name="venueAddress" type="text" placeholder="Street, suburb, city" required></div>
+        </div>
+        <div class="field">
+          <label>Indoor Or Outdoor?</label>
+          <div class="choice-grid" role="radiogroup" aria-label="Indoor or outdoor">
+            <label class="choice-row"><input type="radio" name="venueType" value="Indoor" required><span>Indoor</span></label>
+            <label class="choice-row"><input type="radio" name="venueType" value="Outdoor"><span>Outdoor</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section reveal">
+        <h3>Your Vision</h3>
+        <p class="section-sub">Help us understand the look and feel you're dreaming of.</p>
+        <div class="field"><label for="theme">Describe Your Theme</label><textarea id="theme" name="theme" placeholder="Your dream look, colour palette..."></textarea></div>
+        <div class="field">
+          <label>Decor Budget Range</label>
+          <div class="choice-grid" role="radiogroup" aria-label="Budget range">
+            <label class="choice-row"><input type="radio" name="budget" value="Under R5,000" required><span>Under R5,000</span></label>
+            <label class="choice-row"><input type="radio" name="budget" value="R5,000–R10,000"><span>R5,000–R10,000</span></label>
+            <label class="choice-row"><input type="radio" name="budget" value="R10,000–R20,000"><span>R10,000–R20,000</span></label>
+            <label class="choice-row"><input type="radio" name="budget" value="R20,000+"><span>R20,000+</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section reveal">
+        <h3>What Would You Like Us To Do?</h3>
+        <p class="section-sub">Select everything that applies.</p>
+        <div class="checkbox-grid">
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Full Decor"><span>Full Decor</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Floral Styling"><span>Floral Styling</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Welcome Area"><span>Welcome Area</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Table Styling"><span>Table Styling</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Backdrop"><span>Backdrop</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Stage"><span>Stage</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Ceiling Draping"><span>Ceiling Draping</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Lighting"><span>Lighting</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Custom Signage"><span>Custom Signage</span></label>
+          <label class="checkbox-row"><input type="checkbox" name="services" value="Furniture Hire"><span>Furniture Hire</span></label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn btn btn-solid">Submit</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-main" style="color:var(--gold); font-family:'Cormorant Garamond', serif;">MON</span>
+        <div class="logo-sub" style="margin-top:4px;">Events &amp; Bridal</div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Our Process</a>
+        <a href="gallery.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="hire-a-decorator.html">Event Design</a>
+        <a href="hire-a-decorator.html">Wedding Styling</a>
+        <a href="hire-a-decorator.html">Bridal Events</a>
+        <a href="hire-decor-items.html">Décor Hire</a>
+      </div>
+      <div class="footer-col">
+        <h4>The Collection</h4>
+        <a href="hire-decor-items.html">Tablescape</a>
+        <a href="hire-decor-items.html">Furniture</a>
+        <a href="hire-decor-items.html">Ceremony &amp; Backdrops</a>
+        <a href="hire-decor-items.html">Styling Details</a>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i>IG</a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i>P</a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i>TT</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MON Events &amp; Bridal. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

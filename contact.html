@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquire — MON Events & Bridal</title>
+<meta name="description" content="Tell MON Events & Bridal about your celebration and we'll be in touch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">MON</span>
+      <span class="logo-sub">Events &amp; Bridal</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#featured-work">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#the-collection">Collection</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html" class="btn btn-outline">Enquire</a>
+    </div>
+    <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="index.html">Home</a>
+    <a href="index.html#featured-work">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#the-collection">Collection</a>
+    <a href="index.html#about">About</a>
+    <a href="contact.html" class="btn btn-outline">Enquire</a>
+  </div>
+</div>
+
+<section class="page-header" style="min-height:42vh;">
+  <div class="page-header-bg">
+    <img src="https://images.unsplash.com/photo-1522413452208-996ff3f3e740?q=80&w=1800&auto=format&fit=crop" alt="Candlelit reception table">
+  </div>
+  <div class="page-header-inner reveal">
+    <span class="eyebrow">Enquire</span>
+    <h1>Let's create something beautiful</h1>
+    <p>Tell us about your celebration and we'll be in touch.</p>
+  </div>
+</section>
+
+<section id="enquiry">
+  <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
+
+    <div class="contact-info reveal">
+      <div class="contact-info-item"><div class="label">Phone</div><div class="value">071 234 5678</div></div>
+      <div class="contact-info-item"><div class="label">Email</div><div class="value">hello@monevents.co.za</div></div>
+      <div class="contact-info-item"><div class="label">Based In</div><div class="value">Pretoria, Gauteng</div></div>
+    </div>
+
+    <form class="form-shell reveal-group" id="enquiryForm" onsubmit="event.preventDefault(); alert('This form is not connected to Airtable yet — submission logged to console.'); console.log(new FormData(this));">
+      <div class="form-section reveal">
+        <h3>Your Details</h3>
+        <p class="section-sub">So we know who we're talking to.</p>
+        <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+        <div class="two-col">
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="071 234 5678" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
+        </div>
+      </div>
+
+      <div class="form-section reveal">
+        <h3>Your Celebration</h3>
+        <p class="section-sub">A few details so we can point you in the right direction.</p>
+        <div class="field">
+          <label>What Are You Celebrating?</label>
+          <div class="choice-grid" role="radiogroup" aria-label="Event type">
+            <label class="choice-row"><input type="radio" name="eventType" value="Wedding" required><span>Wedding</span></label>
+            <label class="choice-row"><input type="radio" name="eventType" value="Baby Shower"><span>Baby Shower</span></label>
+            <label class="choice-row"><input type="radio" name="eventType" value="Bridal Shower"><span>Bridal Shower</span></label>
+            <label class="choice-row"><input type="radio" name="eventType" value="Corporate"><span>Corporate</span></label>
+          </div>
+        </div>
+        <div class="field"><label for="eventDate">Event Date (If Known)</label><input id="eventDate" name="eventDate" type="date"></div>
+        <div class="field"><label for="message">Tell Us About Your Celebration</label><textarea id="message" name="message" placeholder="Your vision, venue, guest count, anything that helps us understand your day..." required></textarea></div>
+      </div>
+
+      <button type="submit" class="submit-btn btn btn-solid">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-main" style="color:var(--gold); font-family:'Cormorant Garamond', serif;">MON</span>
+        <div class="logo-sub" style="margin-top:4px;">Events &amp; Bridal</div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Our Process</a>
+        <a href="gallery.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="hire-a-decorator.html">Event Design</a>
+        <a href="hire-a-decorator.html">Wedding Styling</a>
+        <a href="hire-a-decorator.html">Bridal Events</a>
+        <a href="hire-decor-items.html">Décor Hire</a>
+      </div>
+      <div class="footer-col">
+        <h4>The Collection</h4>
+        <a href="hire-decor-items.html">Tablescape</a>
+        <a href="hire-decor-items.html">Furniture</a>
+        <a href="hire-decor-items.html">Ceremony &amp; Backdrops</a>
+        <a href="hire-decor-items.html">Styling Details</a>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MON Events &amp; Bridal. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
