@@ -20,10 +20,8 @@
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
+      <a href="index.html#experience">About</a>
       <a href="index.html#featured-work">Projects</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#the-collection">Collection</a>
-      <a href="index.html#about">About</a>
       <a href="contact.html" class="btn btn-outline">Enquire</a>
     </div>
     <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
@@ -33,10 +31,8 @@
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-inner">
     <a href="index.html">Home</a>
+    <a href="index.html#experience">About</a>
     <a href="index.html#featured-work">Projects</a>
-    <a href="index.html#experience">Experience</a>
-    <a href="index.html#the-collection">Collection</a>
-    <a href="index.html#about">About</a>
     <a href="contact.html" class="btn btn-outline">Enquire</a>
   </div>
 </div>
@@ -54,11 +50,15 @@
 
 <section id="booking">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <form class="form-shell reveal-group" id="hiringForm" onsubmit="event.preventDefault(); alert('This form is not connected to Airtable yet — submission logged to console.'); console.log(new FormData(this));">
+    <form class="form-shell reveal-group ajax-form" id="hiringForm" action="https://formspree.io/f/xrpgblrb" method="POST"
+      data-success-title="Booking Request Sent"
+      data-success-message="We've received your hiring request and will confirm availability shortly."
+      data-error-title="Booking Not Sent"
+      data-error-message="Something went wrong submitting your booking — please try again or contact us directly.">
 
       <div class="form-section reveal">
         <h3>Your Items</h3>
-        <p class="section-sub">From the catalogue. Changed your mind? <a href="hire-decor-items.html" style="color:var(--gold); font-weight:600;">Edit selection</a>.</p>
+        <p class="section-sub">From the catalogue. Changed your mind? <a href="hire-decor-items.html" id="editSelectionLink" style="color:var(--gold); font-weight:600;">Edit selection</a>.</p>
         <div id="itemsList"></div>
         <input type="hidden" name="itemsRaw" id="itemsRaw">
       </div>
@@ -138,9 +138,8 @@
       <div class="footer-col">
         <h4>Company</h4>
         <a href="about.html">About Us</a>
-        <a href="about.html">Our Process</a>
-        <a href="gallery.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html#featured-work">Portfolio</a>
+        <a href="index.html#inquire-now">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -156,9 +155,9 @@
         <a href="hire-decor-items.html">Ceremony &amp; Backdrops</a>
         <a href="hire-decor-items.html">Styling Details</a>
         <div class="social-row">
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i>IG</a>
-          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i>P</a>
-          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i>TT</a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -168,5 +167,6 @@
 
 <script src="script.js"></script>
 <script src="booking.js"></script>
+<script src="formspree.js"></script>
 </body>
 </html>
