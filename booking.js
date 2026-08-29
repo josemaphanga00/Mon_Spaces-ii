@@ -12,8 +12,13 @@ function renderItems() {
   const raw = params.get('items') || '';
   const itemsList = document.getElementById('itemsList');
   const itemsRaw = document.getElementById('itemsRaw');
+  const editLink = document.getElementById('editSelectionLink');
 
   itemsRaw.value = raw;
+
+  if (raw && editLink) {
+    editLink.href = `hire-decor-items.html?items=${encodeURIComponent(raw)}`;
+  }
 
   if (!raw) {
     itemsList.innerHTML = '<p class="section-sub">No items selected yet — <a href="hire-decor-items.html" style="color:var(--gold); font-weight:600;">choose from the catalogue</a>.</p>';

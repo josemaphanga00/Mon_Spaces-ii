@@ -19,6 +19,26 @@ function updateSummary() {
   summaryText.innerHTML = `<strong>${totalItems}</strong> item${totalItems === 1 ? '' : 's'} selected`;
 }
 
+function prefillFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get('items');
+  if (!raw) return;
+
+  const pairs = raw.split(',').map(pair => {
+    const [slug, qty] = pair.split(':');
+    return { slug, qty: parseInt(qty, 10) };
+  });
+
+  pairs.forEach(({ slug, qty }) => {
+    const card = Array.from(cards).find(c => c.dataset.slug === slug);
+    if (card && qty > 0) {
+      card.querySelector('.qty-value').textContent = qty;
+    }
+  });
+
+  updateSummary();
+}
+
 cards.forEach(card => {
   const minusBtn = card.querySelector('.qty-minus');
   const plusBtn = card.querySelector('.qty-plus');
@@ -52,3 +72,5 @@ continueBtn.addEventListener('click', (e) => {
   const url = `hire-decor-items-booking.html?items=${encodeURIComponent(itemsParam)}`;
   window.location.href = url;
 });
+
+prefillFromUrl();
