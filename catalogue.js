@@ -18,6 +18,7 @@ function updateSummary() {
   const totalItems = selections.reduce((sum, s) => sum + s.qty, 0);
   summaryText.innerHTML = `<strong>${totalItems}</strong> item${totalItems === 1 ? '' : 's'} selected`;
 }
+window.refreshCatalogueSummary = updateSummary;
 
 function prefillFromUrl() {
   const params = new URLSearchParams(window.location.search);
