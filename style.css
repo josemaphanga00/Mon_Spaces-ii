@@ -50,6 +50,7 @@ nav{ max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-
 .logo .logo-sub{ font-family:'Manrope', sans-serif; font-size:0.6rem; letter-spacing:0.22em; color:var(--ink-soft); text-transform:uppercase; }
 .nav-links{ display:flex; align-items:center; gap:34px; }
 .nav-links a{ font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); }
+.nav-links .btn, .mobile-menu-inner .btn{ text-transform:none; }
 .nav-links a:hover, .nav-links a.active{ color:var(--gold); }
 .nav-toggle{ display:none; width:38px; height:38px; align-items:center; justify-content:center; background:none; border:1px solid var(--border-soft); border-radius:50%; position:relative; z-index:261; transition:border-color .3s ease; }
 .nav-toggle.open{ border-color:rgba(255,255,255,0.5); }
@@ -387,6 +388,8 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--gold); outline-of
 .lightbox-caption{ margin-top:20px; color:#fff; }
 .lightbox-caption .lb-title{ font-family:'Cormorant Garamond', serif; font-size:1.3rem; }
 .lightbox-caption .lb-sub{ font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.7; margin-top:4px; }
+#lightbox .lb-title,
+#lightbox .lb-sub{ display:none; }
 
 .lightbox-close, .lightbox-nav{
   border:1px solid rgba(255,255,255,0.3); border-radius:50%; background:none; color:#fff;
@@ -461,3 +464,53 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--gold); outline-of
   color:var(--ink-soft); transition:border-color .2s ease, color .2s ease;
 }
 .form-popup-close:hover{ border-color:var(--gold); color:var(--gold); }
+
+/* ---------- Breadcrumbs (SEO + orientation) ---------- */
+.breadcrumb{ font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.65); margin-bottom:10px; }
+.breadcrumb a{ color:rgba(255,255,255,0.85); }
+.breadcrumb a:hover{ color:var(--gold); }
+.breadcrumb .sep{ margin:0 6px; opacity:0.55; }
+
+/* ---------- Catalogue: variation mini-gallery ---------- */
+.mini-gallery-overlay{
+  position:fixed; inset:0; z-index:310;
+  background:rgba(20,17,14,0.7);
+  display:flex; align-items:center; justify-content:center; padding:24px;
+  opacity:0; visibility:hidden;
+  transition:opacity .25s ease;
+}
+.mini-gallery-overlay.open{ opacity:1; visibility:visible; }
+.mini-gallery{
+  background:var(--white); max-width:780px; width:100%; max-height:calc(100vh - 48px);
+  padding:32px; position:relative; overflow-y:auto; overscroll-behavior:contain;
+}
+.mini-gallery-close{
+  position:absolute; top:14px; right:14px; width:34px; height:34px;
+  border:1px solid var(--border-soft); border-radius:50%; background:none;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  color:var(--ink-soft); transition:border-color .2s ease, color .2s ease;
+}
+.mini-gallery-close:hover{ border-color:var(--gold); color:var(--gold); }
+.mini-gallery h3{ font-size:1.5rem; margin-bottom:6px; padding-right:30px; }
+.mini-gallery .section-sub{ text-align:left; margin-bottom:20px; font-size:1rem; }
+.mini-gallery-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+.mini-gallery-thumb{
+  border:none; padding:0; background:none; cursor:pointer;
+  overflow:hidden; position:relative; height:230px;
+  border:1px solid var(--border-soft); transition:border-color .2s ease;
+}
+.mini-gallery-thumb:hover{ border-color:var(--gold); }
+.mini-gallery-thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+.mini-gallery-thumb:hover img{ transform:scale(1.06); }
+.mini-gallery-thumb .thumb-label{
+  position:absolute; left:0; right:0; bottom:0; padding:6px 8px;
+  background:linear-gradient(180deg, rgba(36,31,26,0) 0%, rgba(36,31,26,0.75) 100%);
+  color:#fff; font-size:0.62rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+}
+@media (max-width:700px){
+  .mini-gallery-overlay{ padding:12px; }
+  .mini-gallery{ max-height:calc(100vh - 24px); max-height:calc(100dvh - 24px); padding:24px 18px; }
+  .mini-gallery h3{ font-size:1.3rem; }
+  .mini-gallery-grid{ grid-template-columns:1fr; gap:12px; }
+  .mini-gallery-thumb{ height:160px; }
+}

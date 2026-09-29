@@ -10,27 +10,51 @@ const catLightboxNext = document.getElementById('catLightboxNext');
 const catLightboxMinus = document.getElementById('catLightboxMinus');
 const catLightboxPlus = document.getElementById('catLightboxPlus');
 
-let currentIndex = 0;
-let lastFocused = null;
+const miniGallery = document.getElementById('miniGallery');
+const miniGalleryTitle = document.getElementById('miniGalleryTitle');
+const miniGalleryGrid = document.getElementById('miniGalleryGrid');
+const miniGalleryClose = document.getElementById('miniGalleryClose');
 
-function getCard(index) {
-  return itemPhotos[index].closest('.item-card');
+let activeImages = [];   // the navigable set for the lightbox currently open
+let activeIndex = 0;
+let lightboxLastFocused = null;
+let miniGalleryLastFocused = null;
+
+function getVariations(photo) {
+  const raw = photo.dataset.images;
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed) || parsed.length < 2) return null;
+    const card = photo.closest('.item-card');
+    return parsed.map(v => ({ src: v.src, alt: v.alt, label: v.label, card }));
+  } catch (e) {
+    return null;
+  }
 }
 
-function refresh(index) {
-  const photo = itemPhotos[index];
-  const card = getCard(index);
-  catLightboxImg.src = photo.dataset.full;
-  catLightboxImg.alt = photo.querySelector('img').alt;
-  catLightboxTitle.textContent = card.dataset.name;
-  catLightboxPrice.textContent = card.dataset.price || '';
-  catLightboxQty.textContent = card.querySelector('.qty-value').textContent;
-  currentIndex = index;
+function buildDefaultSet() {
+  // one entry per catalogue item, using each item's primary photo
+  return itemPhotos.map(photo => ({
+    src: photo.dataset.full,
+    alt: photo.querySelector('img').alt,
+    card: photo.closest('.item-card')
+  }));
 }
 
-function openLightbox(index) {
-  lastFocused = document.activeElement;
-  refresh(index);
+function refreshLightbox() {
+  const item = activeImages[activeIndex];
+  catLightboxImg.src = item.src;
+  catLightboxImg.alt = item.alt;
+  catLightboxTitle.textContent = item.card.dataset.name;
+  catLightboxPrice.textContent = item.card.dataset.price || '';
+  catLightboxQty.textContent = item.card.querySelector('.qty-value').textContent;
+}
+
+function openLightboxWithSet(set, index) {
+  activeImages = set;
+  activeIndex = index;
+  refreshLightbox();
   catLightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
   catLightboxClose.focus();
@@ -39,14 +63,20 @@ function openLightbox(index) {
 function closeLightbox() {
   catLightbox.classList.remove('open');
   document.body.style.overflow = '';
-  if (lastFocused) lastFocused.focus();
+  if (lightboxLastFocused) lightboxLastFocused.focus();
 }
 
-function showNext() { refresh((currentIndex + 1) % itemPhotos.length); }
-function showPrev() { refresh((currentIndex - 1 + itemPhotos.length) % itemPhotos.length); }
+function showNext() {
+  activeIndex = (activeIndex + 1) % activeImages.length;
+  refreshLightbox();
+}
+function showPrev() {
+  activeIndex = (activeIndex - 1 + activeImages.length) % activeImages.length;
+  refreshLightbox();
+}
 
 function changeQty(delta) {
-  const card = getCard(currentIndex);
+  const card = activeImages[activeIndex].card;
   const valueEl = card.querySelector('.qty-value');
   const current = parseInt(valueEl.textContent, 10);
   const updated = Math.max(0, current + delta);
@@ -55,8 +85,54 @@ function changeQty(delta) {
   if (window.refreshCatalogueSummary) window.refreshCatalogueSummary();
 }
 
-itemPhotos.forEach((photo, index) => {
-  photo.addEventListener('click', () => openLightbox(index));
+// ---------- Mini gallery (variations of one product) ----------
+function openMiniGallery(photo, variations) {
+  miniGalleryLastFocused = document.activeElement;
+  const card = photo.closest('.item-card');
+  miniGalleryTitle.textContent = card.dataset.name;
+  miniGalleryGrid.innerHTML = '';
+
+  variations.forEach((v, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mini-gallery-thumb';
+    btn.innerHTML = `<img src="${v.src}" alt="${v.alt}">` + (v.label ? `<span class="thumb-label">${v.label}</span>` : '');
+    btn.addEventListener('click', () => {
+      closeMiniGallery();
+      lightboxLastFocused = photo;
+      openLightboxWithSet(variations, i);
+    });
+    miniGalleryGrid.appendChild(btn);
+  });
+
+  miniGallery.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  miniGalleryClose.focus();
+}
+
+function closeMiniGallery() {
+  miniGallery.classList.remove('open');
+  document.body.style.overflow = '';
+  if (miniGalleryLastFocused) miniGalleryLastFocused.focus();
+}
+
+itemPhotos.forEach((photo) => {
+  photo.addEventListener('click', () => {
+    const variations = getVariations(photo);
+    if (variations) {
+      openMiniGallery(photo, variations);
+    } else {
+      lightboxLastFocused = photo;
+      const set = buildDefaultSet();
+      const index = itemPhotos.indexOf(photo);
+      openLightboxWithSet(set, index);
+    }
+  });
+});
+
+miniGalleryClose.addEventListener('click', closeMiniGallery);
+miniGallery.addEventListener('click', (e) => {
+  if (e.target === miniGallery) closeMiniGallery();
 });
 
 catLightboxClose.addEventListener('click', closeLightbox);
@@ -70,6 +146,10 @@ catLightbox.addEventListener('click', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && miniGallery.classList.contains('open')) {
+    closeMiniGallery();
+    return;
+  }
   if (!catLightbox.classList.contains('open')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowRight') showNext();
