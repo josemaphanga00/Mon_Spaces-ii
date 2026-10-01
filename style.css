@@ -207,6 +207,7 @@ section{ padding:110px 0; }
 /* ---------- Footer ---------- */
 footer{ background:var(--cream-deep); padding:70px 0 30px; }
 .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:50px; }
+.footer-grid > .footer-col:nth-child(n+3){ grid-column:4; }
 .footer-brand .logo-main{ font-size:1.5rem; }
 .footer-col h4{ font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:18px; }
 .footer-col a{ display:block; font-size:0.85rem; color:var(--ink); margin-bottom:12px; }
@@ -243,6 +244,8 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--gold); outline-of
   .split-img{ min-height:320px; }
   .split-text{ padding:50px 36px; }
   .footer-grid{ grid-template-columns:1fr 1fr; gap:34px; }
+  .footer-grid > .footer-col:nth-child(n+3){ grid-column:auto; }
+  .footer-grid > .footer-col:nth-child(4){ grid-column:1 / -1; }
 }
 @media (max-width:700px){
   .nav-links{ display:none; }
