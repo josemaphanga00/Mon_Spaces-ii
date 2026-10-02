@@ -96,7 +96,7 @@ function openMiniGallery(photo, variations) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'mini-gallery-thumb';
-    btn.innerHTML = `<img src="${v.src}" alt="${v.alt}">` + (v.label ? `<span class="thumb-label">${v.label}</span>` : '');
+    btn.innerHTML = `<img src="${v.src}" alt="${v.alt}" loading="lazy" decoding="async">` + (v.label ? `<span class="thumb-label">${v.label}</span>` : '');
     btn.addEventListener('click', () => {
       closeMiniGallery();
       lightboxLastFocused = photo;
