@@ -2,11 +2,11 @@
 const popupOverlay = document.createElement('div');
 popupOverlay.className = 'form-popup-overlay';
 popupOverlay.innerHTML = `
-  <div class="form-popup" role="alertdialog" aria-modal="true" aria-labelledby="formPopupTitle">
+  <div class="form-popup" role="alertdialog" aria-modal="true" aria-labelledby="formPopupTitle" aria-describedby="formPopupMessage">
     <button type="button" class="form-popup-close" aria-label="Close">&times;</button>
     <div class="popup-icon"></div>
     <h3 id="formPopupTitle"></h3>
-    <p></p>
+    <p id="formPopupMessage"></p>
   </div>
 `;
 document.body.appendChild(popupOverlay);
@@ -41,7 +41,12 @@ popupOverlay.addEventListener('click', (e) => {
   if (e.target === popupOverlay) closePopup();
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && popupOverlay.classList.contains('open')) closePopup();
+  if (!popupOverlay.classList.contains('open')) return;
+  if (e.key === 'Escape') closePopup();
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    popupClose.focus();
+  }
 });
 
 // ---------- Wire up every form on the page ----------
@@ -75,7 +80,7 @@ document.querySelectorAll('form.ajax-form').forEach(form => {
       } else {
         showPopup('error', errorTitle, errorMessage);
       }
-    } catch (err) {
+    } catch {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
       showPopup('error', errorTitle, errorMessage);

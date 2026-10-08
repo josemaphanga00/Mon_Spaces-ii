@@ -16,7 +16,9 @@ function getSelections() {
 function updateSummary() {
   const selections = getSelections();
   const totalItems = selections.reduce((sum, s) => sum + s.qty, 0);
-  summaryText.innerHTML = `<strong>${totalItems}</strong> item${totalItems === 1 ? '' : 's'} selected`;
+  const count = document.createElement('strong');
+  count.textContent = totalItems;
+  summaryText.replaceChildren(count, ` item${totalItems === 1 ? '' : 's'} selected`);
 }
 window.refreshCatalogueSummary = updateSummary;
 
@@ -27,13 +29,13 @@ function prefillFromUrl() {
 
   const pairs = raw.split(',').map(pair => {
     const [slug, qty] = pair.split(':');
-    return { slug, qty: parseInt(qty, 10) };
+    return { slug, qty: /^[1-9]\d*$/.test(qty || '') ? Number(qty) : 0 };
   });
 
   pairs.forEach(({ slug, qty }) => {
     const card = Array.from(cards).find(c => c.dataset.slug === slug);
-    if (card && qty > 0) {
-      card.querySelector('.qty-value').textContent = qty;
+    if (card && Number.isSafeInteger(qty) && qty > 0) {
+      card.querySelector('.qty-value').textContent = Math.min(qty, 1000);
     }
   });
 
@@ -44,6 +46,8 @@ cards.forEach(card => {
   const minusBtn = card.querySelector('.qty-minus');
   const plusBtn = card.querySelector('.qty-plus');
   const valueEl = card.querySelector('.qty-value');
+  minusBtn.setAttribute('aria-label', `Decrease ${card.dataset.name} quantity`);
+  plusBtn.setAttribute('aria-label', `Increase ${card.dataset.name} quantity`);
 
   minusBtn.addEventListener('click', () => {
     const current = parseInt(valueEl.textContent, 10);
@@ -55,13 +59,12 @@ cards.forEach(card => {
 
   plusBtn.addEventListener('click', () => {
     const current = parseInt(valueEl.textContent, 10);
-    valueEl.textContent = current + 1;
+    valueEl.textContent = Math.min(current + 1, 1000);
     updateSummary();
   });
 });
 
-continueBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+continueBtn.addEventListener('click', () => {
   const selections = getSelections();
 
   if (selections.length === 0) {

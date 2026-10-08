@@ -60,4 +60,16 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowRight') showNext();
   if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'Tab') {
+    const controls = [closeBtn, prevBtn, nextBtn];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 });

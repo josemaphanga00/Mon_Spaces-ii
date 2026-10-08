@@ -3,17 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <title>Portfolio — MON Events & Bridal</title>
 <meta name="description" content="Browse MON Events & Bridal's portfolio of weddings, baby showers, bridal showers and corporate celebrations.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.monevents.co.za/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portfolio — MON Events & Bridal">
+<meta property="og:description" content="Browse MON Events & Bridal's portfolio of weddings, baby showers, bridal showers and corporate celebrations.">
+<meta property="og:url" content="https://www.monevents.co.za/gallery.html">
+<meta property="og:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<meta property="og:site_name" content="MON Events &amp; Bridal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio — MON Events & Bridal">
+<meta name="twitter:description" content="Browse MON Events & Bridal's portfolio of weddings, baby showers, bridal showers and corporate celebrations.">
+<meta name="twitter:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.monevents.co.za/#website",
+    "url": "https://www.monevents.co.za/",
+    "name": "MON Events & Bridal",
+    "publisher": {
+      "@id": "https://www.monevents.co.za/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.monevents.co.za/gallery.html#webpage",
+    "url": "https://www.monevents.co.za/gallery.html",
+    "name": "Portfolio — MON Events & Bridal",
+    "description": "Browse MON Events & Bridal's portfolio of weddings, baby showers, bridal showers and corporate celebrations.",
+    "isPartOf": {
+      "@id": "https://www.monevents.co.za/#website"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.monevents.co.za/#organization",
+    "name": "MON Events & Bridal",
+    "url": "https://www.monevents.co.za/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.monevents.co.za/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Portfolio",
+        "item": "https://www.monevents.co.za/gallery.html"
+      }
+    ]
+  }
+]
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
-  <nav>
+  <nav aria-label="Primary">
     <a href="index.html" class="logo">
       <span class="logo-main">MON</span>
       <span class="logo-sub">Events &amp; Bridal</span>
@@ -21,29 +89,32 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="index.html#featured-work">Featured Work</a>
+      <a href="gallery.html">Featured Work</a>
       <a href="contact.html">Contact</a>
       <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
     </div>
-    <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
+    <button type="button" class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger"></span></button>
   </nav>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" aria-hidden="true">
   <div class="mobile-menu-inner">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="index.html#featured-work">Featured Work</a>
+    <a href="gallery.html">Featured Work</a>
     <a href="contact.html">Contact</a>
     <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
   </div>
-</div>
+
+</nav>
+
+<main id="main-content">
 
 <section class="page-header">
   <div class="page-header-bg">
-    <img src="assets/mon_images/Past work (put it at the top).webp" alt="Full wedding reception decor, wide view" loading="eager" fetchpriority="high" decoding="async">
+    <img src="assets/optimized/Past work (put it at the top).webp" alt="Full wedding reception decor, wide view" loading="eager" fetchpriority="high" decoding="async" width="1000" height="1333">
   </div>
-  <div class="page-header-inner reveal">
+  <div class="page-header-inner">
     <span class="eyebrow">Portfolio</span>
     <h1>Celebrations we've styled</h1>
     <p>A closer look at the weddings, showers and events we've had the joy of designing.</p>
@@ -52,76 +123,71 @@
 
 <section id="projects">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow">All Projects</span>
       <p class="section-sub">Every celebration is designed around the people it's for</p>
     </div>
 
-    <!-- <div class="filter-row reveal">
-      <button class="filter-pill active" data-filter="all">All</button>
-      <button class="filter-pill" data-filter="wedding">Wedding</button>
-    </div> -->
+  <div class="gallery-grid" id="projectsGrid">
 
-  <div class="gallery-grid reveal-group" id="projectsGrid">
-
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Past work (put it at the top).webp" data-title="Signature Celebration" data-sub="Wedding Design">
-    <img src="assets/mon_images/Past work (put it at the top).webp" alt="Featured Past Work" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Past work (put it at the top).webp" data-title="Signature Celebration" data-sub="Wedding Design">
+    <img src="assets/optimized/Past work (put it at the top).webp" alt="Wedding reception decorated with a floral display" loading="lazy" decoding="async" width="1000" height="1333">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Past work and welcome board rental (R450).webp" data-title="Custom Wedding Welcome Board" data-sub="Ceremony Styling">
-    <img src="assets/mon_images/Past work and welcome board rental (R450).webp" alt="Past Work - Welcome Board Rental" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Past work and welcome board rental (R450).webp" data-title="Custom Wedding Welcome Board" data-sub="Ceremony Styling">
+    <img src="assets/optimized/Past work and welcome board rental (R450).webp" alt="Wedding welcome board styled with flowers" loading="lazy" decoding="async" width="1200" height="1599">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Past work and Plain Welcome board rental 2 (R350).webp" data-title="Plain Welcome Board" data-sub="Ceremony Styling">
-    <img src="assets/mon_images/Past work and Plain Welcome board rental 2 (R350).webp" alt="Plain welcome board available to rent" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Past work and Plain Welcome board rental 2 (R350).webp" data-title="Plain Welcome Board" data-sub="Ceremony Styling">
+    <img src="assets/optimized/Past work and Plain Welcome board rental 2 (R350).webp" alt="Plain welcome board available to rent" loading="lazy" decoding="async" width="1000" height="1333">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Past work 1.webp" data-title="Styled Celebration" data-sub="Event Styling">
-    <img src="assets/mon_images/Past work 1.webp" alt="Past Work" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Past work 1.webp" data-title="Styled Celebration" data-sub="Event Styling">
+    <img src="assets/optimized/Past work 1.webp" alt="Wedding decor arranged for a celebration" loading="lazy" decoding="async" width="1200" height="1800">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Post work 2.webp" data-title="Heart Shaped Arch, Full Bloom" data-sub="Ceremony Styling">
-    <img src="assets/mon_images/Post work 2.webp" alt="Post Work" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Post work 2.webp" data-title="Heart Shaped Arch, Full Bloom" data-sub="Ceremony Styling">
+    <img src="assets/optimized/Post work 2.webp" alt="Floral arch backdrop for a celebration" loading="lazy" decoding="async" width="1024" height="1024">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Flower arrangement_centrepiece Past work.webp" data-title="Flower Arrangement Centrepiece" data-sub="Table Styling">
-    <img src="assets/mon_images/Flower arrangement_centrepiece Past work.webp" alt="Flower Arrangement Centrepiece" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Flower arrangement_centrepiece Past work.webp" data-title="Flower Arrangement Centrepiece" data-sub="Table Styling">
+    <img src="assets/optimized/Flower arrangement_centrepiece Past work.webp" alt="Flower Arrangement Centrepiece" loading="lazy" decoding="async" width="960" height="1200">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Green theme plate arrangement.webp" data-title="Green Theme Plate Arrangement" data-sub="Table Styling">
-    <img src="assets/mon_images/Green theme plate arrangement.webp" alt="Green theme plate arrangement" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Green theme plate arrangement.webp" data-title="Green Theme Plate Arrangement" data-sub="Table Styling">
+    <img src="assets/optimized/Green theme plate arrangement.webp" alt="Green theme plate arrangement" loading="lazy" decoding="async" width="1086" height="1448">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/IMG_2911.webp" data-title="Event Styling" data-sub="Wedding Design">
-    <img src="assets/mon_images/IMG_2911.webp" alt="Event styling" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/IMG_2911.webp" data-title="Event Styling" data-sub="Wedding Design">
+    <img src="assets/optimized/IMG_2911.webp" alt="Event styling" loading="lazy" decoding="async" width="1024" height="1536">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Pink theme arrangement.webp" data-title="Pink Theme Arrangement" data-sub="Table Styling">
-    <img src="assets/mon_images/Pink theme arrangement.webp" alt="Pink theme arrangement" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Pink theme arrangement.webp" data-title="Pink Theme Arrangement" data-sub="Table Styling">
+    <img src="assets/optimized/Pink theme arrangement.webp" alt="Pink theme arrangement" loading="lazy" decoding="async" width="1086" height="1448">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/Past_work_3.webp" data-title="Styled Celebration" data-sub="Event Styling">
-    <img src="assets/mon_images/Past_work_3.webp" alt="Styled celebration" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/Past_work_3.webp" data-title="Styled Celebration" data-sub="Event Styling">
+    <img src="assets/optimized/Past_work_3.webp" alt="Styled celebration" loading="lazy" decoding="async" width="1000" height="1333">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/outside-table-1.webp" data-title="Outdoor Tablescape" data-sub="Table Styling">
-    <img src="assets/mon_images/outside-table-1.webp" alt="Outdoor table styling" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/outside-table-1.webp" data-title="Outdoor Tablescape" data-sub="Table Styling">
+    <img src="assets/optimized/outside-table-1.webp" alt="Outdoor table styling" loading="lazy" decoding="async" width="853" height="1280">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/DSC01086.webp" data-title="Wedding Celebration" data-sub="Wedding Design">
-    <img src="assets/mon_images/DSC01086.webp" alt="Wedding celebration styling" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/DSC01086.webp" data-title="Wedding Celebration" data-sub="Wedding Design">
+    <img src="assets/optimized/DSC01086.webp" alt="Wedding celebration styling" loading="lazy" decoding="async" width="1000" height="1500">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/DSC01089 (1).webp" data-title="Wedding Celebration" data-sub="Wedding Design">
-    <img src="assets/mon_images/DSC01089 (1).webp" alt="Wedding celebration styling" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/DSC01089 (1).webp" data-title="Wedding Celebration" data-sub="Wedding Design">
+    <img src="assets/optimized/DSC01089 (1).webp" alt="Wedding celebration styling" loading="lazy" decoding="async" width="1000" height="1500">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/DSC01097.webp" data-title="Wedding Celebration" data-sub="Wedding Design">
-    <img src="assets/mon_images/DSC01097.webp" alt="Wedding celebration styling" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/DSC01097.webp" data-title="Wedding Celebration" data-sub="Wedding Design">
+    <img src="assets/optimized/DSC01097.webp" alt="Wedding celebration styling" loading="lazy" decoding="async" width="900" height="1350">
     </button>
 
-    <button type="button" class="gallery-item reveal" data-category="wedding" data-full="assets/mon_images/heart-arch.webp" data-title="Heart-Shaped Floral Arch" data-sub="Ceremony Styling">
-    <img src="assets/mon_images/heart-arch.webp" alt="Heart-shaped floral ceremony arch" loading="lazy" decoding="async">
+    <button type="button" class="gallery-item" data-category="wedding" data-full="assets/mon_images/heart-arch.webp" data-title="Heart-Shaped Floral Arch" data-sub="Ceremony Styling">
+    <img src="assets/optimized/heart-arch.webp" alt="Heart-shaped floral ceremony arch" loading="lazy" decoding="async" width="1000" height="667">
     </button>
 
   </div>
@@ -143,6 +209,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
@@ -168,20 +236,19 @@
       <div class="footer-col">
         <div class="social-row">
           <a href="https://www.instagram.com/mon_spaces/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       © 2026 MON Events &amp; Bridal. All Rights Reserved.
-      <div class="footer-credit">Built by <a href="#" target="_blank" rel="noopener">Project Succulent</a> | Sedum Adolphi</div>
+      <div class="footer-credit">Built by Project Succulent | Sedum Adolphi</div>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script src="projects.js"></script>
-<script src="lightbox.js"></script>
+<script src="script.js" defer></script>
+<script src="lightbox.js" defer></script>
 </body>
 </html>

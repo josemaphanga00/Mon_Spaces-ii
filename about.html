@@ -3,17 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <title>About — MON Events & Bridal</title>
 <meta name="description" content="The story, philosophy and people behind MON Events & Bridal — considered event design and styling.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.monevents.co.za/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — MON Events & Bridal">
+<meta property="og:description" content="The story, philosophy and people behind MON Events & Bridal — considered event design and styling.">
+<meta property="og:url" content="https://www.monevents.co.za/about.html">
+<meta property="og:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<meta property="og:site_name" content="MON Events &amp; Bridal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — MON Events & Bridal">
+<meta name="twitter:description" content="The story, philosophy and people behind MON Events & Bridal — considered event design and styling.">
+<meta name="twitter:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.monevents.co.za/#website",
+    "url": "https://www.monevents.co.za/",
+    "name": "MON Events & Bridal",
+    "publisher": {
+      "@id": "https://www.monevents.co.za/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.monevents.co.za/about.html#webpage",
+    "url": "https://www.monevents.co.za/about.html",
+    "name": "About — MON Events & Bridal",
+    "description": "The story, philosophy and people behind MON Events & Bridal — considered event design and styling.",
+    "isPartOf": {
+      "@id": "https://www.monevents.co.za/#website"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.monevents.co.za/#organization",
+    "name": "MON Events & Bridal",
+    "url": "https://www.monevents.co.za/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.monevents.co.za/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.monevents.co.za/about.html"
+      }
+    ]
+  }
+]
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
-  <nav>
+  <nav aria-label="Primary">
     <a href="index.html" class="logo">
       <span class="logo-main">MON</span>
       <span class="logo-sub">Events &amp; Bridal</span>
@@ -21,29 +89,32 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="index.html#featured-work">Featured Work</a>
+      <a href="gallery.html">Featured Work</a>
       <a href="contact.html">Contact</a>
       <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
     </div>
-    <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
+    <button type="button" class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger"></span></button>
   </nav>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" aria-hidden="true">
   <div class="mobile-menu-inner">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="index.html#featured-work">Featured Work</a>
+    <a href="gallery.html">Featured Work</a>
     <a href="contact.html">Contact</a>
     <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
   </div>
-</div>
+
+</nav>
+
+<main id="main-content">
 
 <section class="page-header">
   <div class="page-header-bg ken-burns">
-    <img src="assets/mon_images/The story behind the styling.webp" alt="Soft styled florals and candlelight" loading="eager" fetchpriority="high" decoding="async">
+    <img src="assets/optimized/The story behind the styling.webp" alt="Soft styled florals and candlelight" loading="eager" fetchpriority="high" decoding="async" width="1000" height="1500">
   </div>
-  <div class="page-header-inner reveal">
+  <div class="page-header-inner">
     <span class="eyebrow">About MON</span>
     <h1>The story behind<br>the styling.</h1>
     <p>A considered approach to celebrations — built on the belief that the smallest details are what people remember most.</p>
@@ -51,9 +122,9 @@
 </section>
 
 <section id="story">
-  <div class="split reveal">
+  <div class="split">
     <div class="split-img">
-      <img src="assets/mon_images/Started with a single wedding image.webp" alt="Started with a single wedding image" loading="lazy" decoding="async">
+      <img src="assets/optimized/Started with a single wedding image.webp" alt="Started with a single wedding image" loading="lazy" decoding="async" width="1500" height="1026">
     </div>
     <div class="split-text">
       <span class="eyebrow">Our Story</span>
@@ -66,27 +137,27 @@
 
 <section class="experience">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow">What We Believe</span>
       <p class="section-sub">The values behind every celebration we style</p>
     </div>
-    <div class="values-row reveal-group">
-      <div class="process-step reveal">
+    <div class="values-row">
+      <div class="process-step">
         <div class="process-icon">✦</div>
         <h3>Intentional</h3>
         <p>Every element is chosen for a reason, never just to fill space.</p>
       </div>
-      <div class="process-step reveal">
+      <div class="process-step">
         <div class="process-icon">✎</div>
         <h3>Considered</h3>
         <p>The small details are where a celebration truly comes alive.</p>
       </div>
-      <div class="process-step reveal">
+      <div class="process-step">
         <div class="process-icon">✿</div>
         <h3>Elegant</h3>
         <p>Beauty that feels effortless, never overdone.</p>
       </div>
-      <div class="process-step reveal">
+      <div class="process-step">
         <div class="process-icon">☙</div>
         <h3>Warm</h3>
         <p>Design in service of the people celebrating, always.</p>
@@ -95,36 +166,38 @@
   </div>
 </section>
 
-<!-- <section id="moments">
+<section id="moments">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <div class="section-head reveal">
-      <span class="eyebrow">Behind The Scenes</span>
-      <p class="section-sub">Moments we love from the studio and on-site</p>
+    <div class="section-head">
+      <span class="eyebrow">Moments Worth Sharing</span>
+      <p class="section-sub">Celebrations, laughter, and moments worth remembering</p>
     </div>
-    <div class="gallery-grid reveal-group">
-      <div class="gallery-item reveal">
-        <img src="assets/mon_images/_K9A3380.webp" alt="Bridal bouquet detail being prepared" loading="lazy" decoding="async">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/optimized/_K9A3380.webp" alt="Bridal bouquet detail being prepared" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-item reveal">
-        <img src="assets/mon_images/_K9A3381.webp" alt="Florals and candles styled on a table" loading="lazy" decoding="async">
+      <div class="gallery-item">
+        <img src="assets/optimized/_K9A3381.webp" alt="Florals and candles styled on a table" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-item reveal">
-        <img src="assets/mon_images/_K9A2566.webp" alt="Soft drapery styled at a venue" loading="lazy" decoding="async">
+      <div class="gallery-item">
+        <img src="assets/optimized/_K9A2566.webp" alt="Soft drapery styled at a venue" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <section class="cta-band">
   <div class="cta-band-bg">
-    <img src="assets/mon_images/Let’s create something beautiful image .webp" alt="Candlelit reception table" loading="lazy" decoding="async">
+    <img src="assets/optimized/Let’s create something beautiful image .webp" alt="Candlelit reception table" loading="lazy" decoding="async" width="1000" height="1500">
   </div>
-  <div class="container reveal" style="max-width:700px; margin:0 auto; padding:0 32px;">
+  <div class="container" style="max-width:700px; margin:0 auto; padding:0 32px;">
     <h2>Let's Create Something Beautiful</h2>
     <p>Tell us about your celebration and we'll be in touch.</p>
     <a href="hire-a-decorator-questionnaire.html" class="btn btn-solid">Enquire With MON</a>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
@@ -150,8 +223,8 @@
       <div class="footer-col">
         <div class="social-row">
           <a href="https://www.instagram.com/mon_spaces/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -159,7 +232,7 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script src="about.js"></script>
+<script src="script.js" defer></script>
+<script src="about.js" defer></script>
 </body>
 </html>

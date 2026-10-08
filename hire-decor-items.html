@@ -3,17 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <title>The MON Collection — MON Events & Bridal</title>
 <meta name="description" content="Browse and hire individual decor items from MON Events & Bridal — arches, drapery, candles and more for your event.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.monevents.co.za/hire-decor-items.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The MON Collection — MON Events & Bridal">
+<meta property="og:description" content="Browse and hire individual decor items from MON Events & Bridal — arches, drapery, candles and more for your event.">
+<meta property="og:url" content="https://www.monevents.co.za/hire-decor-items.html">
+<meta property="og:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<meta property="og:site_name" content="MON Events &amp; Bridal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The MON Collection — MON Events & Bridal">
+<meta name="twitter:description" content="Browse and hire individual decor items from MON Events & Bridal — arches, drapery, candles and more for your event.">
+<meta name="twitter:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.monevents.co.za/#website",
+    "url": "https://www.monevents.co.za/",
+    "name": "MON Events & Bridal",
+    "publisher": {
+      "@id": "https://www.monevents.co.za/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.monevents.co.za/hire-decor-items.html#webpage",
+    "url": "https://www.monevents.co.za/hire-decor-items.html",
+    "name": "The MON Collection — MON Events & Bridal",
+    "description": "Browse and hire individual decor items from MON Events & Bridal — arches, drapery, candles and more for your event.",
+    "isPartOf": {
+      "@id": "https://www.monevents.co.za/#website"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.monevents.co.za/#organization",
+    "name": "MON Events & Bridal",
+    "url": "https://www.monevents.co.za/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.monevents.co.za/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "The MON Collection",
+        "item": "https://www.monevents.co.za/hire-decor-items.html"
+      }
+    ]
+  }
+]
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
-  <nav>
+  <nav aria-label="Primary">
     <a href="index.html" class="logo">
       <span class="logo-main">MON</span>
       <span class="logo-sub">Events &amp; Bridal</span>
@@ -21,29 +89,32 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="index.html#featured-work">Featured Work</a>
+      <a href="gallery.html">Featured Work</a>
       <a href="contact.html">Contact</a>
       <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
     </div>
-    <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
+    <button type="button" class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger"></span></button>
   </nav>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" aria-hidden="true">
   <div class="mobile-menu-inner">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="index.html#featured-work">Featured Work</a>
+    <a href="gallery.html">Featured Work</a>
     <a href="contact.html">Contact</a>
     <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
   </div>
-</div>
+
+</nav>
+
+<main id="main-content">
 
 <section class="page-header">
   <div class="page-header-bg">
-    <img src="assets/mon_images/Past work 1.webp" alt="Decor items available to hire from MON Events & Bridal" loading="eager" fetchpriority="high" decoding="async">
+    <img src="assets/optimized/Past work 1.webp" alt="Decor items available to hire from MON Events & Bridal" loading="eager" fetchpriority="high" decoding="async" width="1200" height="1800">
   </div>
-  <div class="page-header-inner reveal">
+  <div class="page-header-inner">
     <span class="eyebrow">The MON Collection</span>
     <h1>Style it yourself,<br>with our pieces.</h1>
     <p>Pick what you need and how many — we'll take it from there. Delivery and collection options come next.</p>
@@ -52,17 +123,17 @@
 
 <section id="catalogue">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow">Catalogue</span>
       <p class="section-sub">Choose your items — click a photo for a closer look</p>
     </div>
 
-    <div class="catalogue-grid reveal-group" id="catalogueGrid">
+    <div class="catalogue-grid" id="catalogueGrid">
 
-      <div class="item-card reveal" data-name="Heart Shaped Arch Backdrop" data-slug="heart-shaped-arch-backdrop" data-price="R3,500">
+      <div class="item-card" data-name="Heart Shaped Arch Backdrop" data-slug="heart-shaped-arch-backdrop" data-price="R3,500">
         <button type="button" class="item-photo" data-full="assets/mon_images/Heart Shaped Arch for backdrop R3500.webp"
           data-images='[{"src":"assets/mon_images/Heart Shaped Arch for backdrop R3500.webp","alt":"Heart shaped arch backdrop, plain","label":"Plain Backdrop"},{"src":"assets/mon_images/Heart shaped arch with full flower coverage rental R3500 .webp","alt":"Heart shaped arch with full flower coverage","label":"Full Flower Coverage"},{"src":"assets/mon_images/Add as second picture with the other arch with full flower coverage .webp","alt":"Heart shaped arch with full flower coverage, alternate view","label":"Full Flower Coverage — Alternate View"}]'>
-          <img src="assets/mon_images/Heart Shaped Arch for backdrop R3500.webp" alt="Heart shaped arch backdrop available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Heart Shaped Arch for backdrop R3500.webp" alt="Heart shaped arch backdrop available to rent" loading="lazy" decoding="async" width="1200" height="1585">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Heart Shaped Arch Backdrop</h3>
@@ -77,9 +148,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Bulb Clear Vase" data-slug="bulb-clear-vase" data-price="R35">
+      <div class="item-card" data-name="Bulb Clear Vase" data-slug="bulb-clear-vase" data-price="R35">
         <button type="button" class="item-photo" data-full="assets/mon_images/Bulb clear vase rental R35.webp">
-          <img src="assets/mon_images/Bulb clear vase rental R35.webp" alt="Clear bulb vase available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Bulb clear vase rental R35.webp" alt="Clear bulb vase available to rent" loading="lazy" decoding="async" width="1320" height="1647">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Bulb Clear Vase</h3>
@@ -94,9 +165,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Single Sten Slant Vase" data-slug="single-sten-slant-vase" data-price="R15">
+      <div class="item-card" data-name="Single Sten Slant Vase" data-slug="single-sten-slant-vase" data-price="R15">
         <button type="button" class="item-photo" data-full="assets/mon_images/Single Sten slant vase - rental R15.webp">
-          <img src="assets/mon_images/Single Sten slant vase - rental R15.webp" alt="Single sten slant vase available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Single Sten slant vase - rental R15.webp" alt="Single sten slant vase available to rent" loading="lazy" decoding="async" width="1320" height="1644">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Single Sten Slant Vase</h3>
@@ -111,9 +182,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Red Carpet" data-slug="red-carpet" data-price="From R500">
+      <div class="item-card" data-name="Red Carpet" data-slug="red-carpet" data-price="From R500">
         <button type="button" class="item-photo" data-full="assets/mon_images/Red Carpet rental from R500 per length.webp">
-          <img src="assets/mon_images/Red Carpet rental from R500 per length.webp" alt="Red carpet available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Red Carpet rental from R500 per length.webp" alt="Red carpet available to rent" loading="lazy" decoding="async" width="1280" height="1800">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Red Carpet</h3>
@@ -128,10 +199,10 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Wine Glass" data-slug="wine-glass" data-price="R20">
+      <div class="item-card" data-name="Wine Glass" data-slug="wine-glass" data-price="R20">
         <button type="button" class="item-photo" data-full="assets/mon_images/Wine glass R20.webp"
           data-images='[{"src":"assets/mon_images/Wine glass R20.webp","alt":"Wine glass available to rent","label":"Wine Glass"},{"src":"assets/mon_images/Wine glass (add as serving image to the same listing).webp","alt":"Wine glass shown as part of a serving setting","label":"Serving Image"},{"src":"assets/mon_images/IMG_3118 (1).webp","alt":"Wine glass, alternate view","label":"Alternate View 1"},{"src":"assets/mon_images/IMG_3119 (1).webp","alt":"Wine glass, another view","label":"Alternate View 2"}]'>
-          <img src="assets/mon_images/Wine glass R20.webp" alt="Wine glass available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Wine glass R20.webp" alt="Wine glass available to rent" loading="lazy" decoding="async" width="554" height="554">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Wine Glass</h3>
@@ -146,10 +217,10 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Juice Glass" data-slug="juice-glass" data-price="R12">
+      <div class="item-card" data-name="Juice Glass" data-slug="juice-glass" data-price="R12">
         <button type="button" class="item-photo" data-full="assets/mon_images/Juice glass R12.webp"
           data-images='[{"src":"assets/mon_images/Juice glass R12.webp","alt":"Juice glass available to rent","label":"Juice Glass"},{"src":"assets/mon_images/IMG_3120 (1).webp","alt":"Juice glass, alternate view","label":"Alternate View"}]'>
-          <img src="assets/mon_images/Juice glass R12.webp" alt="Juice glass available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Juice glass R12.webp" alt="Juice glass available to rent" loading="lazy" decoding="async" width="408" height="288">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Juice Glass</h3>
@@ -164,26 +235,9 @@
         </div>
       </div>
 
-      <!-- <div class="item-card reveal" data-name="Flower Arrangement Centrepiece" data-slug="flower-arrangement-centrepiece" data-price="">
-        <button type="button" class="item-photo" data-full="assets/mon_images/Flower arrangement_centrepiece Past work.webp">
-          <img src="assets/mon_images/Flower arrangement_centrepiece Past work.webp" alt="Flower arrangement centrepiece available to rent" loading="lazy" decoding="async">
-          <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
-        </button>
-        <h3>Flower Arrangement Centrepiece</h3>
-        <div class="item-price">Price on request</div>
-        <div class="qty-control">
-          <span class="qty-label">Quantity</span>
-          <div class="qty-buttons">
-            <button type="button" class="qty-btn qty-minus" aria-label="Decrease quantity">−</button>
-            <span class="qty-value">0</span>
-            <button type="button" class="qty-btn qty-plus" aria-label="Increase quantity">+</button>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="item-card reveal" data-name="Crystal Underplate" data-slug="crystal-underplate" data-price="R20">
+      <div class="item-card" data-name="Crystal Underplate" data-slug="crystal-underplate" data-price="R20">
         <button type="button" class="item-photo" data-full="assets/mon_images/Crystal Underplate rental (R20) .webp">
-          <img src="assets/mon_images/Crystal Underplate rental (R20) .webp" alt="Crystal underplate available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Crystal Underplate rental (R20) .webp" alt="Crystal underplate available to rent" loading="lazy" decoding="async" width="1600" height="1066">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Crystal Underplate</h3>
@@ -198,9 +252,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Gold Underplate" data-slug="gold-underplate" data-price="R25">
+      <div class="item-card" data-name="Gold Underplate" data-slug="gold-underplate" data-price="R25">
         <button type="button" class="item-photo" data-full="assets/mon_images/Gold underplate rental R25.webp">
-          <img src="assets/mon_images/Gold underplate rental R25.webp" alt="Gold underplate available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Gold underplate rental R25.webp" alt="Gold underplate available to rent" loading="lazy" decoding="async" width="825" height="1100">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Gold Underplate</h3>
@@ -215,9 +269,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Pillar Candle In Glass Jar (Set Of 3)" data-slug="pillar-candle-glass-jar-set-of-3" data-price="R150">
+      <div class="item-card" data-name="Pillar Candle In Glass Jar (Set Of 3)" data-slug="pillar-candle-glass-jar-set-of-3" data-price="R150">
         <button type="button" class="item-photo" data-full="assets/mon_images/Pillar Candle in glass jar - Set of 3 R150 - rental.webp">
-          <img src="assets/mon_images/Pillar Candle in glass jar - Set of 3 R150 - rental.webp" alt="Pillar candles in glass jars, set of three, available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Pillar Candle in glass jar - Set of 3 R150 - rental.webp" alt="Pillar candles in glass jars, set of three, available to rent" loading="lazy" decoding="async" width="470" height="652">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Pillar Candle In Glass Jar (Set Of 3)</h3>
@@ -232,9 +286,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Welcome Board" data-slug="welcome-board" data-price="R450">
+      <div class="item-card" data-name="Welcome Board" data-slug="welcome-board" data-price="R450">
         <button type="button" class="item-photo" data-full="assets/mon_images/Past work and welcome board rental (R450).webp">
-          <img src="assets/mon_images/Past work and welcome board rental (R450).webp" alt="Welcome board available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Past work and welcome board rental (R450).webp" alt="Welcome board available to rent" loading="lazy" decoding="async" width="1200" height="1599">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Welcome Board</h3>
@@ -249,9 +303,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Plain Welcome Board" data-slug="plain-welcome-board" data-price="R350">
+      <div class="item-card" data-name="Plain Welcome Board" data-slug="plain-welcome-board" data-price="R350">
         <button type="button" class="item-photo" data-full="assets/mon_images/Past work and Plain Welcome board rental 2 (R350).webp">
-          <img src="assets/mon_images/Past work and Plain Welcome board rental 2 (R350).webp" alt="Plain welcome board available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Past work and Plain Welcome board rental 2 (R350).webp" alt="Plain welcome board available to rent" loading="lazy" decoding="async" width="1000" height="1333">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Plain Welcome Board</h3>
@@ -266,9 +320,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Mirror Welcome Sign" data-slug="mirror-welcome-sign" data-price="R2,500">
+      <div class="item-card" data-name="Mirror Welcome Sign" data-slug="mirror-welcome-sign" data-price="R2,500">
         <button type="button" class="item-photo" data-full="assets/mon_images/Mirror Welcome Sign rental(R2500).webp">
-          <img src="assets/mon_images/Mirror Welcome Sign rental(R2500).webp" alt="Mirror welcome sign available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Mirror Welcome Sign rental(R2500).webp" alt="Mirror welcome sign available to rent" loading="lazy" decoding="async" width="800" height="1067">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Mirror Welcome Sign</h3>
@@ -283,9 +337,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Proposal Set Up" data-slug="proposal-set-up" data-price="R1,500">
+      <div class="item-card" data-name="Proposal Set Up" data-slug="proposal-set-up" data-price="R1,500">
         <button type="button" class="item-photo" data-full="assets/mon_images/Proposal set up R1500.webp">
-          <img src="assets/mon_images/Proposal set up R1500.webp" alt="Proposal set up available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Proposal set up R1500.webp" alt="Proposal set up available to rent" loading="lazy" decoding="async" width="1320" height="1175">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Proposal Set Up</h3>
@@ -300,9 +354,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Proposal Full Setup" data-slug="proposal-full-setup" data-price="R4,500">
+      <div class="item-card" data-name="Proposal Full Setup" data-slug="proposal-full-setup" data-price="R4,500">
         <button type="button" class="item-photo" data-full="assets/mon_images/Proposal full setup R4500.webp">
-          <img src="assets/mon_images/Proposal full setup R4500.webp" alt="Proposal full setup available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Proposal full setup R4500.webp" alt="Proposal full setup available to rent" loading="lazy" decoding="async" width="1318" height="1631">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Proposal Full Setup</h3>
@@ -317,9 +371,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Table Number number" data-slug="table-number-number" data-price="R30">
+      <div class="item-card" data-name="Table Number" data-slug="table-number-number" data-price="R30">
         <button type="button" class="item-photo" data-full="assets/mon_images/Table number option one (rental).webp">
-          <img src="assets/mon_images/Table number option one (rental).webp" alt="Table number available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Table number option one (rental).webp" alt="Table number available to rent" loading="lazy" decoding="async" width="800" height="1200">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Table Number Card</h3>
@@ -334,12 +388,12 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Table Number Card (Option 2)" data-slug="table-number-card-option-2" data-price="R30 per number">
+      <div class="item-card" data-name="Table Number Card (Option 2)" data-slug="table-number-card-option-2" data-price="R30 per number">
         <button type="button" class="item-photo" data-full="assets/mon_images/Table number rental 2 (R30 per number).webp">
-          <img src="assets/mon_images/Table number rental 2 (R30 per number).webp" alt="Second table number card option available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Table number rental 2 (R30 per number).webp" alt="Second table number card option available to rent" loading="lazy" decoding="async" width="1320" height="735">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
-        <h3>Acrylic & Gold Table Number (with Gold letters)</h3>
+        <h3>Acrylic &amp; Gold Table Number (with Gold letters)</h3>
         <div class="item-price">R40 per number</div>
         <div class="qty-control">
           <span class="qty-label">Quantity</span>
@@ -351,9 +405,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="Proposal LED Light" data-slug="proposal-led-light" data-price="R1,300">
+      <div class="item-card" data-name="Proposal LED Light" data-slug="proposal-led-light" data-price="R1,300">
         <button type="button" class="item-photo" data-full="assets/mon_images/Proposal LED Light - rental R1300.webp">
-          <img src="assets/mon_images/Proposal LED Light - rental R1300.webp" alt="Proposal LED light available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/Proposal LED Light - rental R1300.webp" alt="Proposal LED light available to rent" loading="lazy" decoding="async" width="1000" height="1000">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>Proposal LED Light</h3>
@@ -368,9 +422,9 @@
         </div>
       </div>
 
-      <div class="item-card reveal" data-name="White Carpet" data-slug="white-carpet" data-price="R500 per 7 meters">
+      <div class="item-card" data-name="White Carpet" data-slug="white-carpet" data-price="R500 per 7 meters">
         <button type="button" class="item-photo" data-full="assets/mon_images/White Carpet Rental R500 per 7meter.webp">
-          <img src="assets/mon_images/White Carpet Rental R500 per 7meter.webp" alt="White carpet available to rent" loading="lazy" decoding="async">
+          <img src="assets/optimized/White Carpet Rental R500 per 7meter.webp" alt="White carpet available to rent" loading="lazy" decoding="async" width="1203" height="1800">
           <span class="item-view-label">Click To View <span class="arrow-icon" aria-hidden="true">&#8594;</span></span>
         </button>
         <h3>White Carpet</h3>
@@ -387,9 +441,9 @@
 
     </div>
 
-    <div class="catalogue-summary reveal">
+    <div class="catalogue-summary">
       <div class="summary-text" id="summaryText"><strong>0</strong> items selected</div>
-      <a href="#" class="btn btn-solid" id="continueBtn">Continue To Booking</a>
+      <button type="button" class="btn btn-solid" id="continueBtn">Continue To Booking</button>
     </div>
 
     <div class="mini-gallery-overlay" id="miniGallery" role="dialog" aria-modal="true" aria-label="Product variations">
@@ -423,6 +477,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
     <div class="footer-grid">
@@ -447,20 +503,20 @@
       <div class="footer-col">
         <div class="social-row">
           <a href="https://www.instagram.com/mon_spaces/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       © 2026 MON Events &amp; Bridal. All Rights Reserved.
-      <div class="footer-credit">Built by <a href="#" target="_blank" rel="noopener">Project Succulent</a> | Sedum Adolphi</div>
+      <div class="footer-credit">Built by Project Succulent | Sedum Adolphi</div>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script src="catalogue.js"></script>
-<script src="catalogue-lightbox.js"></script>
+<script src="script.js" defer></script>
+<script src="catalogue.js" defer></script>
+<script src="catalogue-lightbox.js" defer></script>
 </body>
 </html>

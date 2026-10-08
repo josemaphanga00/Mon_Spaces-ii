@@ -3,17 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <title>Complete Your Booking — MON Events & Bridal</title>
 <meta name="description" content="Complete your decor item hire booking with MON Events & Bridal — collection or delivery, dates, and setup details.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.monevents.co.za/hire-decor-items-booking.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Complete Your Booking — MON Events & Bridal">
+<meta property="og:description" content="Complete your decor item hire booking with MON Events & Bridal — collection or delivery, dates, and setup details.">
+<meta property="og:url" content="https://www.monevents.co.za/hire-decor-items-booking.html">
+<meta property="og:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<meta property="og:site_name" content="MON Events &amp; Bridal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Complete Your Booking — MON Events & Bridal">
+<meta name="twitter:description" content="Complete your decor item hire booking with MON Events & Bridal — collection or delivery, dates, and setup details.">
+<meta name="twitter:image" content="https://www.monevents.co.za/assets/mon_images/Landing%20page%20picture%201.webp">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Manrope:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.monevents.co.za/#website",
+    "url": "https://www.monevents.co.za/",
+    "name": "MON Events & Bridal",
+    "publisher": {
+      "@id": "https://www.monevents.co.za/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.monevents.co.za/hire-decor-items-booking.html#webpage",
+    "url": "https://www.monevents.co.za/hire-decor-items-booking.html",
+    "name": "Complete Your Booking — MON Events & Bridal",
+    "description": "Complete your decor item hire booking with MON Events & Bridal — collection or delivery, dates, and setup details.",
+    "isPartOf": {
+      "@id": "https://www.monevents.co.za/#website"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.monevents.co.za/#organization",
+    "name": "MON Events & Bridal",
+    "url": "https://www.monevents.co.za/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.monevents.co.za/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Complete Your Booking",
+        "item": "https://www.monevents.co.za/hire-decor-items-booking.html"
+      }
+    ]
+  }
+]
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
-  <nav>
+  <nav aria-label="Primary">
     <a href="index.html" class="logo">
       <span class="logo-main">MON</span>
       <span class="logo-sub">Events &amp; Bridal</span>
@@ -21,29 +89,32 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="index.html#featured-work">Featured Work</a>
+      <a href="gallery.html">Featured Work</a>
       <a href="contact.html">Contact</a>
       <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
     </div>
-    <button class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="burger"></span></button>
+    <button type="button" class="nav-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger"></span></button>
   </nav>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" aria-hidden="true">
   <div class="mobile-menu-inner">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="index.html#featured-work">Featured Work</a>
+    <a href="gallery.html">Featured Work</a>
     <a href="contact.html">Contact</a>
     <a href="hire-a-decorator-questionnaire.html" class="btn btn-outline">Enquire</a>
   </div>
-</div>
+
+</nav>
+
+<main id="main-content">
 
 <section class="page-header" style="min-height:38vh;">
   <div class="page-header-bg">
-    <img src="assets/mon_images/Gold underplate rental R25.webp" alt="Decor items ready for delivery" loading="eager" fetchpriority="high" decoding="async">
+    <img src="assets/optimized/Gold underplate rental R25.webp" alt="Decor items ready for delivery" loading="eager" fetchpriority="high" decoding="async" width="825" height="1100">
   </div>
-  <div class="page-header-inner reveal">
+  <div class="page-header-inner">
     <span class="eyebrow">The MON Collection</span>
     <h1>Complete your booking</h1>
     <p>Confirm your items and tell us a few details about your event.</p>
@@ -52,20 +123,20 @@
 
 <section id="booking">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <form class="form-shell reveal-group ajax-form" id="hiringForm" action="https://formspree.io/f/xrpgblrb" method="POST"
+    <form class="form-shell ajax-form" id="hiringForm" action="https://formspree.io/f/xrpgblrb" method="POST"
       data-success-title="Booking Request Sent"
       data-success-message="We've received your hiring request and will confirm availability shortly."
       data-error-title="Booking Not Sent"
       data-error-message="Something went wrong submitting your booking — please try again or contact us directly.">
 
-      <div class="form-section reveal">
+      <div class="form-section">
         <h3>Your Items</h3>
         <p class="section-sub">From the catalogue. <a href="hire-decor-items.html" id="editSelectionLink" style="color:var(--gold); font-weight:600;">Edit selection</a>.</p>
         <div id="itemsList"></div>
         <input type="hidden" name="itemsRaw" id="itemsRaw">
       </div>
 
-      <div class="form-section reveal">
+      <div class="form-section">
         <h3>Personal Details</h3>
         <p class="section-sub">So we know who we're talking to.</p>
         <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
@@ -75,7 +146,7 @@
         </div>
       </div>
 
-      <div class="form-section reveal">
+      <div class="form-section">
         <h3>Event Details</h3>
         <p class="section-sub">What are we hiring for, and when?</p>
         <div class="field">
@@ -90,7 +161,7 @@
         <div class="field"><label for="eventDate">Event Date</label><input id="eventDate" name="eventDate" type="date" required></div>
       </div>
 
-      <div class="form-section reveal">
+      <div class="form-section">
         <h3>Collection Or Delivery</h3>
         <p class="section-sub">How will the items get to you?</p>
         <div class="field">
@@ -99,7 +170,7 @@
             <label class="choice-row"><input type="radio" name="collectionMethod" value="Delivery" id="deliveryRadio"><span>I Need Delivery</span></label>
           </div>
         </div>
-        <div class="field" id="deliveryAddressField" style="display:none;">
+        <div class="field" id="deliveryAddressField" hidden>
           <label for="deliveryAddress">Delivery Address</label>
           <input id="deliveryAddress" name="deliveryAddress" type="text" placeholder="Street, suburb, city">
         </div>
@@ -116,7 +187,7 @@
         </div>
       </div>
 
-      <div class="form-section reveal">
+      <div class="form-section">
         <h3>Damage Waiver</h3>
         <p class="section-sub">Please read and confirm before submitting.</p>
         <label class="checkbox-row" style="align-items:flex-start;">
@@ -129,6 +200,8 @@
     </form>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
@@ -154,8 +227,8 @@
       <div class="footer-col">
         <div class="social-row">
           <a href="https://www.instagram.com/mon_spaces/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -163,8 +236,8 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script src="booking.js"></script>
-<script src="formspree.js"></script>
+<script src="script.js" defer></script>
+<script src="booking.js" defer></script>
+<script src="formspree.js" defer></script>
 </body>
 </html>

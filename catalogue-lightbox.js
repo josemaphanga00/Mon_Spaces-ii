@@ -49,6 +49,8 @@ function refreshLightbox() {
   catLightboxTitle.textContent = item.card.dataset.name;
   catLightboxPrice.textContent = item.card.dataset.price || '';
   catLightboxQty.textContent = item.card.querySelector('.qty-value').textContent;
+  catLightboxMinus.setAttribute('aria-label', `Decrease ${item.card.dataset.name} quantity`);
+  catLightboxPlus.setAttribute('aria-label', `Increase ${item.card.dataset.name} quantity`);
 }
 
 function openLightboxWithSet(set, index) {
@@ -96,7 +98,18 @@ function openMiniGallery(photo, variations) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'mini-gallery-thumb';
-    btn.innerHTML = `<img src="${v.src}" alt="${v.alt}" loading="lazy" decoding="async">` + (v.label ? `<span class="thumb-label">${v.label}</span>` : '');
+    const image = document.createElement('img');
+    image.src = v.src;
+    image.alt = v.alt;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    btn.append(image);
+    if (v.label) {
+      const label = document.createElement('span');
+      label.className = 'thumb-label';
+      label.textContent = v.label;
+      btn.append(label);
+    }
     btn.addEventListener('click', () => {
       closeMiniGallery();
       lightboxLastFocused = photo;
@@ -150,8 +163,33 @@ document.addEventListener('keydown', (e) => {
     closeMiniGallery();
     return;
   }
+  if (miniGallery.classList.contains('open') && e.key === 'Tab') {
+    const controls = [miniGalleryClose, ...miniGalleryGrid.querySelectorAll('button')];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+    return;
+  }
   if (!catLightbox.classList.contains('open')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowRight') showNext();
   if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'Tab') {
+    const controls = [catLightboxClose, catLightboxPrev, catLightboxNext, catLightboxMinus, catLightboxPlus];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 });
