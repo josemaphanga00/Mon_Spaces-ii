@@ -97,5 +97,5 @@ All eight HTML pages; `booking.js`, `catalogue.js`, `catalogue-lightbox.js`, `fo
 - Confirmed all eight HTML pages have one `main` landmark, one title, a meta description, canonical URL, and parseable JSON-LD. IDs are unique, images have alt attributes, and local page, script, stylesheet, and image references resolve.
 - Confirmed the sitemap XML parses and lists the eight intended URLs. The root URL maps to `index.html` under the site's expected static-host configuration.
 - Added `type="button"` to each mobile navigation toggle so it cannot submit a form if the markup is later rearranged.
-- Facebook and Pinterest footer icons intentionally remain `href="#"` placeholders until their official profile URLs are supplied. Replace these before launch if they should navigate to social profiles.
+- Facebook footer links now point to the supplied Facebook share URL and open in a new tab. Pinterest footer icons remain `href="#"` placeholders until an official profile URL is supplied.
 - `git diff --check` passed. JavaScript syntax checking and a fresh browser/Lighthouse run could not be performed in this workspace because Node.js and Lighthouse are unavailable. Forms use live Formspree endpoints; end-to-end delivery still needs a real submission check before launch.
