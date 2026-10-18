@@ -99,3 +99,49 @@ All eight HTML pages; `booking.js`, `catalogue.js`, `catalogue-lightbox.js`, `fo
 - Added `type="button"` to each mobile navigation toggle so it cannot submit a form if the markup is later rearranged.
 - Facebook footer links now point to the supplied Facebook share URL and open in a new tab. Pinterest footer icons remain `href="#"` placeholders until an official profile URL is supplied.
 - `git diff --check` passed. JavaScript syntax checking and a fresh browser/Lighthouse run could not be performed in this workspace because Node.js and Lighthouse are unavailable. Forms use live Formspree endpoints; end-to-end delivery still needs a real submission check before launch.
+
+### Image + Portfolio SEO
+
+- [x] Portfolio projects inventoried on the featured work page
+- [x] Portfolio image filenames and descriptive alt text optimized
+- [x] Image compression and responsive delivery checked; portfolio images include 480px and 800px WebP sources
+- [x] Important projects have useful context and captions
+- [x] Portfolio linked to the relevant event styling and decor hire pages
+- [ ] Project locations and venues verified before publication
+- [x] Image sitemap added for portfolio photographs
+- [x] Decor photography set for portfolio Open Graph and Twitter link previews
+- [x] Portfolio page has relevant internal links to services
+
+Portfolio venues and locations remain unverified because they are not identified in the supplied project material. No venue names or event locations have been added to image descriptions.
+Open Graph and Twitter preview metadata points to the portfolio image; rendered previews still need checking once the new domain is live.
+
+### Future follow-up
+
+- Verify each project's venue and location with MON Events & Bridal before adding place names to captions, image text, or structured data.
+- After `monspaces.co.za` is connected, confirm DNS and HTTPS, choose the preferred host (`monspaces.co.za` or `www.monspaces.co.za`), and configure redirects from the old domain and any nonpreferred host to the canonical host.
+- Once the site is live, inspect the portfolio link preview in social preview tools and confirm the image loads from the new domain. Search engines choose their own result titles, snippets, and thumbnails, so check actual results after indexing.
+- Reassess the image sitemap after launch. Portfolio images already use standard HTML `<img>` elements; keep the image entries if Search Console shows discovery or indexing benefit.
+- Review the portfolio on mobile and desktop in a browser after deployment, including caption legibility, responsive image selection, and full-size lightbox images.
+
+### Content + Semantic SEO
+
+- [x] Topic clusters mapped to actual services in `CONTENT-SEO-PLAN.md`
+- [x] Search intent assigned to each target page in `CONTENT-SEO-PLAN.md`
+- [x] Content gaps prioritized by business value in `CONTENT-SEO-PLAN.md`
+- [x] Wedding decor planning guide drafted in `wedding-decor-planning-guide.html`
+- [x] Supporting content links to commercial pages — the portfolio and planning guide link to event styling and decor hire
+- [x] Duplicate and thin content reviewed; homepage and service page roles are differentiated, and conversion forms are noindex
+- [x] Existing first-hand material is connected: MON's published process, origin story, original portfolio images, and customer reviews
+- [x] Guide draft reviewed against the site's stated services and brand voice
+- [x] Editorial plan and publishing priorities established in `CONTENT-SEO-PLAN.md`
+
+The guide remains a draft until MON Events & Bridal verifies and approves the copy and operational details for publication.
+
+### Technical + On-Page SEO closeout — 18 October 2026
+
+- Confirmed all 10 HTML pages have one title, a meta description, a canonical URL, one H1, unique IDs, and parseable JSON-LD. Local page, script, stylesheet, and image references resolve; the sitemap XML parses and lists the seven intended indexable landing pages. The privacy page and two enquiry/booking forms remain `noindex` and are excluded from the sitemap by design.
+- Confirmed the portfolio uses responsive WebP image variants and descriptive alt text. Added intrinsic dimensions to three lazy-loaded About page images to reserve their layout space while loading.
+- Rendered the homepage in headless Chrome from the local static server. This confirms a browser can render the homepage markup and execute its deferred scripts in this environment; it is not a production browser or device compatibility sign-off.
+- `git diff --check` passed after this closeout.
+- A numerical performance audit (Lighthouse/PageSpeed and Core Web Vitals) remains outstanding: Lighthouse and Node.js are not installed here, and the production hostname did not resolve from the available network environment. No LCP, CLS, INP, or SEO score is claimed.
+- Production launch checks remain outstanding until DNS resolves and the deployed site can be checked over HTTPS: preferred-host redirects, response headers, live asset URLs, robots/sitemap responses, social previews, and real form delivery.

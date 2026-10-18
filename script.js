@@ -2,6 +2,7 @@ const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
 function setMenuOpen(isOpen) {
+  if (!menuBtn || !mobileMenu) return;
   mobileMenu.classList.toggle('open', isOpen);
   mobileMenu.setAttribute('aria-hidden', String(!isOpen));
   menuBtn.classList.toggle('open', isOpen);
@@ -10,24 +11,26 @@ function setMenuOpen(isOpen) {
   document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
-menuBtn.addEventListener('click', () => {
-  setMenuOpen(menuBtn.getAttribute('aria-expanded') !== 'true');
-});
-
-document.querySelectorAll('.mobile-menu a').forEach(a => {
-  a.addEventListener('click', () => {
-    setMenuOpen(false);
-    const target = new URL(a.href, window.location.href);
-    if (target.pathname === window.location.pathname && target.hash) menuBtn.focus();
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    setMenuOpen(menuBtn.getAttribute('aria-expanded') !== 'true');
   });
-});
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-    setMenuOpen(false);
-    menuBtn.focus();
-  }
-});
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      setMenuOpen(false);
+      const target = new URL(a.href, window.location.href);
+      if (target.pathname === window.location.pathname && target.hash) menuBtn.focus();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      setMenuOpen(false);
+      menuBtn.focus();
+    }
+  });
+}
 
 // Mark the current document link without turning in-page links into false active states.
 const currentPath = window.location.pathname.replace(/\/$/, '/index.html');

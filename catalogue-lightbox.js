@@ -81,7 +81,7 @@ function changeQty(delta) {
   const card = activeImages[activeIndex].card;
   const valueEl = card.querySelector('.qty-value');
   const current = parseInt(valueEl.textContent, 10);
-  const updated = Math.max(0, current + delta);
+  const updated = Math.min(1000, Math.max(0, current + delta));
   valueEl.textContent = updated;
   catLightboxQty.textContent = updated;
   if (window.refreshCatalogueSummary) window.refreshCatalogueSummary();

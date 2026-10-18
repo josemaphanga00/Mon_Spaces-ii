@@ -28,8 +28,9 @@ function prefillFromUrl() {
   if (!raw) return;
 
   const pairs = raw.split(',').map(pair => {
-    const [slug, qty] = pair.split(':');
-    return { slug, qty: /^[1-9]\d*$/.test(qty || '') ? Number(qty) : 0 };
+    const [slug, qty, ...extra] = pair.split(':');
+    const parsedQty = /^[1-9]\d*$/.test(qty || '') ? Number(qty) : 0;
+    return { slug, qty: extra.length || !Number.isSafeInteger(parsedQty) ? 0 : parsedQty };
   });
 
   pairs.forEach(({ slug, qty }) => {

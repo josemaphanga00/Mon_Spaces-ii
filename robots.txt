@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.monevents.co.za/sitemap.xml
+Sitemap: https://monspaces.co.za/sitemap.xml
