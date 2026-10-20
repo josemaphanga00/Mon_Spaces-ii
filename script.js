@@ -1,5 +1,9 @@
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
+const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+// CSS entrances are opt-in so the document remains fully visible without JS.
+if (!motionQuery.matches) document.documentElement.classList.add('motion-ready');
 
 function setMenuOpen(isOpen) {
   if (!menuBtn || !mobileMenu) return;
@@ -44,8 +48,8 @@ document.querySelectorAll('.nav-links a, .mobile-menu-inner a').forEach(link => 
 
 // Reveal supporting content as it enters the viewport. Without observer support,
 // or when reduced motion is requested, content stays visible without animation.
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealItems = document.querySelectorAll('.featured-item, .process-step, .split, .testimonial-card, .gallery-item, .item-card, .form-section, .stats-row');
+const reduceMotion = motionQuery.matches;
+const revealItems = document.querySelectorAll('.section-head, .featured-item, .process-step, .split, .testimonial-card, .gallery-item, .item-card, .form-section, .stats-row, .service-detail-card, .service-faq details, .planning-toc, .planning-article section, .planning-next-step, .cta-band .container, .footer-grid, .footer-bottom');
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -55,10 +59,12 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+  }, { threshold: 0.06, rootMargin: '0px 0px -48px 0px' });
 
   revealItems.forEach(item => {
     item.classList.add('scroll-reveal');
+    const siblings = item.parentElement ? [...item.parentElement.children].filter(child => child.matches('.scroll-reveal')) : [];
+    item.style.setProperty('--reveal-delay', `${Math.min(siblings.length - 1, 3) * 55}ms`);
     revealObserver.observe(item);
     item.addEventListener('focusin', () => {
       item.classList.add('is-visible');
@@ -66,3 +72,9 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     }, { once: true });
   });
 }
+
+// Keep an open mobile menu in sync when the viewport crosses the desktop breakpoint.
+const desktopQuery = window.matchMedia('(min-width: 861px)');
+desktopQuery.addEventListener?.('change', event => {
+  if (event.matches && mobileMenu?.classList.contains('open')) setMenuOpen(false);
+});
