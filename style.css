@@ -47,6 +47,7 @@ p{ margin:0; }
 .local-intro p{ max-width:780px; margin:0 auto; color:var(--ink-soft); line-height:1.8; }
 .local-intro-actions,.service-detail-cta{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
 .service-detail-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.service-detail-grid-single{ grid-template-columns:minmax(0,760px); justify-content:center; }
 .service-detail-card{ padding:28px; border:1px solid var(--border-soft); background:var(--white); }
 .service-detail-card h3{ margin:0 0 12px; font-size:1.35rem; }
 .service-detail-card p,.service-faq details p{ color:var(--ink-soft); line-height:1.75; }
@@ -184,6 +185,8 @@ nav{ max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-
 
 /* ---------- Section shell ---------- */
 section{ padding:110px 0; }
+.service-details{ padding-bottom:40px; }
+.service-details + #questionnaire{ padding-top:40px; }
 
 /* ---------- Featured Work ---------- */
 .featured-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:50px; }
@@ -355,11 +358,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .gallery-item{ position:relative; overflow:hidden; break-inside:avoid; margin-bottom:24px; display:block; width:100%; border:none; background:none; padding:0; margin-top:0; text-align:left; font:inherit; color:inherit; cursor:pointer; }
 .gallery-item img{ width:100%; height:auto; display:block; transition:transform .6s ease; }
 .gallery-item:hover img{ transform:scale(1.04); }
-.gallery-item::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(36,31,26,0) 48%, rgba(36,31,26,0.72) 100%); opacity:1; transition:opacity .3s ease; }
-.gallery-item:hover::after{ opacity:1; }
-.gallery-caption{ position:absolute; left:18px; right:18px; bottom:14px; z-index:2; opacity:1; transform:translateY(0); transition:opacity .3s ease, transform .3s ease; }
-.gallery-item:hover .gallery-caption{ opacity:1; transform:translateY(0); }
-.gallery-caption span{ font-size:0.8rem; font-weight:600; color:#fff; letter-spacing:0.04em; }
 
 /* ---------- Catalogue (flat cards) ---------- */
 .catalogue-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:10px; }
@@ -436,9 +434,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* ---------- Gallery caption sub-line (Portfolio page) ---------- */
 .gallery-caption .cap-sub{ display:block; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.75; margin-top:2px; color:#fff; }
-
-/* ---------- Filter pills (Portfolio page) ---------- */
-.filter-row{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
 
 /* ---------- Contact info row (Enquire page) ---------- */
 .contact-info{ display:flex; gap:20px; flex-wrap:wrap; margin-bottom:24px; }

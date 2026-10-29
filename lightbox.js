@@ -1,8 +1,6 @@
 const galleryItems = Array.from(document.querySelectorAll('#projectsGrid .gallery-item'));
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
-const lightboxTitle = document.getElementById('lightboxTitle');
-const lightboxSub = document.getElementById('lightboxSub');
 const lightboxCounter = document.getElementById('lightboxCounter');
 const closeBtn = document.getElementById('lightboxClose');
 const prevBtn = document.getElementById('lightboxPrev');
@@ -15,8 +13,6 @@ function showImage(index) {
   const item = galleryItems[index];
   lightboxImg.src = item.dataset.full;
   lightboxImg.alt = item.querySelector('img').alt;
-  lightboxTitle.textContent = item.dataset.title;
-  lightboxSub.textContent = item.dataset.sub;
   lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
   currentIndex = index;
 }
