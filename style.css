@@ -456,9 +456,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   transition:opacity .3s ease;
 }
 .lightbox.open{ opacity:1; visibility:visible; }
-.lightbox-content{ max-width:1000px; width:100%; text-align:center; }
-.lightbox-img-wrap{ display:flex; align-items:center; justify-content:center; max-height:72vh; }
-.lightbox-img-wrap img{ max-width:100%; max-height:72vh; object-fit:contain; }
+.lightbox-content{ max-width:1000px; width:100%; text-align:center; opacity:0; transform:translateY(8px) scale(.99); transition:opacity .28s var(--ease-ui), transform .32s var(--ease-ui); }
+.lightbox.open .lightbox-content{ opacity:1; transform:translateY(0) scale(1); }
+.lightbox-img-wrap{ display:flex; align-items:center; justify-content:center; max-height:72vh; touch-action:pan-y; }
+.lightbox-img-wrap img{ max-width:100%; max-height:72vh; object-fit:contain; opacity:1; transform:translateX(0) scale(1); transition:opacity .24s var(--ease-ui), transform .3s var(--ease-ui); }
+#lightboxImg.is-entering{ opacity:0; transform:translateX(var(--lightbox-slide-offset, 14px)) scale(.99); }
+#lightboxImg[data-direction="prev"]{ --lightbox-slide-offset:-14px; }
 .lightbox-caption{ margin-top:20px; color:#fff; }
 .lightbox-caption .lb-title{ font-family:'Cormorant Garamond', serif; font-size:1.3rem; }
 .lightbox-caption .lb-sub{ font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.7; margin-top:4px; }
@@ -466,6 +469,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 #lightbox .lb-sub{ display:none; }
 
 .lightbox-close, .lightbox-nav{
+  z-index:1;
   border:1px solid rgba(255,255,255,0.3); border-radius:50%; background:none; color:#fff;
   display:flex; align-items:center; justify-content:center; cursor:pointer;
   transition:border-color .2s ease, color .2s ease;
