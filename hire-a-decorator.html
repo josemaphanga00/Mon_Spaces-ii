@@ -184,7 +184,8 @@
 
 <section id="questionnaire">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <form class="form-shell ajax-form" id="decorationForm" action="https://formspree.io/f/xaeebwgw" method="POST"
+    <form class="form-shell" id="decorationForm" action="https://api.staticforms.dev/submit" method="POST">
+      <input type="hidden" name="apiKey" value="sf_beab2d9146bf46d224f7dbdb">
       data-success-title="Enquiry Received"
       data-success-message="Thank you for sharing your vision. We’ll contact you soon to discuss your wedding decor."
       data-error-title="Submission Not Sent"
@@ -228,7 +229,7 @@
       <div class="form-section">
         <h3>Your Vision</h3>
         <p class="section-sub">Help us understand the look and feel you're dreaming of.</p>
-        <div class="field"><label for="theme">Describe Your Theme</label><textarea id="theme" name="theme" placeholder="Your dream look, colour palette..."></textarea></div>
+        <div class="field"><label for="theme">Describe Your Theme</label><textarea id="theme" name="message" placeholder="Your dream look, colour palette..." required></textarea></div>
         <div class="field"><label>Decor Budget Range</label><div class="choice-grid" role="radiogroup" aria-label="Budget range">
           <label class="choice-row"><input type="radio" name="budget" value="Under R5,000" required><span>Under R5,000</span></label>
           <label class="choice-row"><input type="radio" name="budget" value="R5,000–R10,000"><span>R5,000–R10,000</span></label>

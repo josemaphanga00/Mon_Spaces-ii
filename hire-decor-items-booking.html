@@ -149,11 +149,8 @@
 
 <section id="booking">
   <div class="container" style="max-width:1240px; margin:0 auto; padding:0 32px;">
-    <form class="form-shell ajax-form" id="hiringForm" action="https://formspree.io/f/mdeednjq" method="POST"
-      data-success-title="Booking Request Sent"
-      data-success-message="We've received your hiring request and will confirm availability shortly."
-      data-error-title="Booking Not Sent"
-      data-error-message="Something went wrong submitting your booking — please try again or contact us directly.">
+    <form class="form-shell" id="hiringForm" action="https://api.staticforms.dev/submit" method="POST">
+      <input type="hidden" name="apiKey" value="sf_beab2d9146bf46d224f7dbdb">
 
       <div class="form-section">
         <h3>Your Items</h3>
@@ -187,6 +184,11 @@
           </div>
         </div>
         <div class="field"><label for="eventDate">Event Date</label><input id="eventDate" name="eventDate" type="date" required></div>
+      </div>
+
+      <div class="form-section">
+        <h3>Message</h3>
+        <div class="field"><label for="message">Additional details</label><textarea id="message" name="message" placeholder="Share any other details about your booking..." required></textarea></div>
       </div>
 
       <div class="form-section">

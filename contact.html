@@ -171,17 +171,15 @@
       </a>
     </address>
 
-    <form class="form-shell ajax-form" id="enquiryForm" action="https://formspree.io/f/xppabqzg" method="POST"
-      data-success-title="Thank You"
-      data-success-message="Your enquiry has been sent — we'll be in touch shortly."
-      data-error-title="Enquiry Not Sent"
-      data-error-message="Something went wrong sending your enquiry — please try again or email us directly.">
+    <form class="form-shell" id="enquiryForm" action="https://api.staticforms.dev/submit" method="POST">
+      <input type="hidden" name="apiKey" value="sf_3e66987677a902325f1dc817">
       <div class="form-section">
         <h3>Get In Touch</h3>
-        <p class="section-sub">All fields are optional — leave your details and we'll reach out.</p>
+        <p class="section-sub">Share your email and a message, and we'll be in touch shortly.</p>
         <div class="field"><label for="name">Full Name (Optional)</label><input id="name" name="name" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
         <div class="field"><label for="phone">Number (Optional)</label><input id="phone" name="phone" type="tel" placeholder="+27 84 347 4145"></div>
-        <div class="field"><label for="comment">Comment (Optional)</label><textarea id="comment" name="comment" placeholder="Tell us a little about your event..."></textarea></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us a little about your event..." required></textarea></div>
       </div>
 
       <p class="section-sub privacy-notice">See our <a href="privacy.html">Privacy Notice</a> to learn how we handle information sent through this form.</p>
